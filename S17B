@@ -1,0 +1,10 @@
+previous = input("Enter previous traffic density (LOW/HIGH): ").upper()
+current = input("Enter current traffic density (LOW/HIGH): ").upper()
+if previous not in ["LOW", "HIGH"] or current not in ["LOW", "HIGH"]:
+    print("Invalid input")
+elif previous == "LOW" and current == "HIGH":
+    print("Traffic increased: Green signal")
+elif current == "HIGH":
+    print("High traffic: Green signal")
+else:
+    print("Low traffic: Red signal")
