@@ -1,0 +1,17 @@
+import pandas as pd
+from sklearn.linear_model import LogisticRegression
+data = {"Fasting": [80, 90, 110, 130, 150, 85, 120, 140], "PostMeal": [110, 130, 170, 200, 220, 120, 180, 210], "Age": [25, 30, 45, 50, 60, 28, 40, 55], "BMI": [22, 24, 28, 31, 33, 23, 29, 32], "Diabetes": [0, 0, 1, 1, 1, 0, 1, 1]}
+df = pd.DataFrame(data)
+X = df[["Fasting", "PostMeal", "Age", "BMI"]]
+y = df["Diabetes"]
+model = LogisticRegression()
+model.fit(X, y)
+n = int(input("Enter number of people: "))
+for i in range(n):
+    fasting = float(input("Fasting blood sugar: "))
+    postmeal = float(input("Post-meal blood sugar: "))
+    age = int(input("Age: "))
+    bmi = float(input("BMI: "))
+    person = pd.DataFrame({"Fasting": [fasting], "PostMeal": [postmeal], "Age": [age], "BMI": [bmi]})
+    result = model.predict(person)[0]
+    print("Diabetic" if result == 1 else "Non-Diabetic")
