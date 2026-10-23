@@ -1,0 +1,15 @@
+stacks = [["A"], ["B"], ["C"]]
+goal = [["C", "B", "A"]]
+def display():
+    print(stacks)
+print("Initial state:")
+display()
+stacks[1].append(stacks[0].pop())
+stacks = [s for s in stacks if s]
+print("Move A onto B:")
+display()
+stacks[1].append(stacks[0].pop())
+stacks = [s for s in stacks if s]
+print("Move B onto C:")
+display()
+print("Goal state achieved")
