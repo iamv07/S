@@ -1,0 +1,26 @@
+from collections import deque
+import time
+graph = {"A": ["B", "C"], "B": ["D", "E"], "C": ["F"], "D": [], "E": [], "F": []}
+def bfs(start):
+    visited = set()
+    queue = deque([start])
+    while queue:
+        node = queue.popleft()
+        if node not in visited:
+            visited.add(node)
+            queue.extend(graph[node])
+    return visited
+def dfs(start, visited=None):
+    if visited is None:
+        visited = set()
+    if start not in visited:
+        visited.add(start)
+        for neighbour in graph[start]:
+            dfs(neighbour, visited)
+    return visited
+start = time.perf_counter()
+print("BFS:", bfs("A"))
+print("BFS time:", time.perf_counter() - start)
+start = time.perf_counter()
+print("DFS:", dfs("A"))
+print("DFS time:", time.perf_counter() - start)
