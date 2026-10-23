@@ -1,0 +1,10 @@
+monkey = "door"
+box = "center"
+banana = "center"
+print("Monkey moves to the box")
+monkey = box
+print("Monkey climbs the box")
+if monkey == banana:
+    print("Monkey gets the banana")
+else:
+    print("Goal not achieved")
