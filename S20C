@@ -1,0 +1,5 @@
+import pandas as pd
+df = pd.DataFrame({"Name": ["Amit", "Riya", "Raj"], "Salary": [30000, 40000, 50000], "Experience": [2, 5, 7]})
+df.loc[df["Experience"] < 5, "Salary"] *= 1.115
+df.loc[df["Experience"] >= 5, "Salary"] *= 1.065
+print(df)
