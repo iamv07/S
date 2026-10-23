@@ -1,0 +1,12 @@
+previous = input("Enter previous door status: ").upper()
+current = input("Enter current door status: ").upper()
+if previous not in ["OPEN", "CLOSED"] or current not in ["OPEN", "CLOSED"]:
+    print("Invalid input")
+elif previous == "CLOSED" and current == "OPEN":
+    print("Alert: Door opened")
+elif previous == "OPEN" and current == "CLOSED":
+    print("Door closed")
+elif current == "OPEN":
+    print("Warning: Door remains open")
+else:
+    print("Door remains closed")
