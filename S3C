@@ -1,0 +1,23 @@
+def solve(n, row=0, cols=None):
+    if cols is None:
+        cols = []
+    if row == n:
+        return cols
+    for col in range(n):
+        safe = True
+        for r in range(row):
+            if cols[r] == col or abs(cols[r] - col) == abs(r - row):
+                safe = False
+                break
+        if safe:
+            result = solve(n, row + 1, cols + [col])
+            if result is not None:
+                return result
+    return None
+n = int(input("Enter N: "))
+result = solve(n)
+if result is None:
+    print("No solution")
+else:
+    for row in range(n):
+        print("." * result[row] + "Q" + "." * (n - result[row] - 1))
