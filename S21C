@@ -1,0 +1,12 @@
+current = input("Enter current location: ").upper()
+goal = input("Enter goal location: ").upper()
+print("Current state:", current)
+print("Goal state:", goal)
+if current == goal:
+    print("Action: Stay")
+elif current == "A" and goal == "B":
+    print("Action: Move to B")
+elif current == "B" and goal == "C":
+    print("Action: Move to C")
+else:
+    print("Action: Move toward goal")
