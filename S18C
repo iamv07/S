@@ -1,0 +1,10 @@
+perception = input("Enter environment status (DIRTY/CLEAN): ").upper()
+if perception == "DIRTY":
+    decision = "Clean"
+elif perception == "CLEAN":
+    decision = "Move"
+else:
+    decision = "Invalid perception"
+print("Perception:", perception)
+print("Decision:", decision)
+print("Action:", decision)
