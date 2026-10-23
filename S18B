@@ -1,0 +1,9 @@
+import pandas as pd
+df = pd.DataFrame({"Name": ["Amit", "Riya", "Raj"], "Salary": [40000, 60000, 30000]})
+print("Sorted DataFrame:")
+print(df.sort_values("Salary"))
+print("Employees with salary above 35000:")
+print(df[df["Salary"] > 35000])
+df.loc[df["Name"] == "Raj", "Salary"] = 45000
+print("Updated DataFrame:")
+print(df)
