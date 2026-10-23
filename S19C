@@ -1,0 +1,16 @@
+import pandas as pd
+from sklearn.linear_model import LogisticRegression
+data = {"Amount": [100, 500, 200, 900, 150, 1000, 300, 800], "CardAge": [5, 3, 8, 1, 6, 1, 4, 2], "Time": [10, 22, 12, 23, 14, 2, 11, 1], "Location": [95, 30, 90, 20, 85, 10, 80, 15], "Online": [0, 1, 0, 1, 0, 1, 0, 1], "Fraud": [0, 1, 0, 1, 0, 1, 0, 1]}
+df = pd.DataFrame(data)
+X = df[["Amount", "CardAge", "Time", "Location", "Online"]]
+y = df["Fraud"]
+model = LogisticRegression()
+model.fit(X, y)
+amount = float(input("Transaction amount: "))
+age = float(input("Card age in years: "))
+time = int(input("Transaction time (0-23): "))
+location = float(input("Location match score (0-100): "))
+online = int(input("Online transaction (1=yes, 0=no): "))
+person = pd.DataFrame({"Amount": [amount], "CardAge": [age], "Time": [time], "Location": [location], "Online": [online]})
+result = model.predict(person)[0]
+print("Fraud" if result == 1 else "Legitimate")
