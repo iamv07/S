@@ -1,0 +1,12 @@
+import pandas as pd
+from sklearn.linear_model import LinearRegression
+df = pd.read_csv("advertising.csv")
+X = df[["TV", "Radio", "Newspaper"]]
+y = df["Sales"]
+model = LinearRegression()
+model.fit(X, y)
+tv = float(input("Enter TV budget: "))
+radio = float(input("Enter Radio budget: "))
+newspaper = float(input("Enter Newspaper budget: "))
+person = pd.DataFrame({"TV": [tv], "Radio": [radio], "Newspaper": [newspaper]})
+print("Predicted Sales:", model.predict(person)[0])
