@@ -1,0 +1,12 @@
+monkey = input("Monkey position (door/window/middle): ")
+box = input("Box position (door/window/middle): ")
+banana = input("Banana position (door/window/middle): ")
+print("Monkey moves to the box")
+monkey = box
+print("Monkey pushes the box under the banana")
+box = banana
+monkey = banana
+if monkey == box == banana:
+    print("Monkey climbs the box")
+    print("Monkey gets the banana")
+    print("Goal achieved")
