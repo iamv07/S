@@ -1,0 +1,10 @@
+from sklearn.linear_model import LogisticRegression
+X = [[20], [35], [45], [54], [55], [70], [90]]
+y = [0, 0, 0, 0, 1, 1, 1]
+model = LogisticRegression()
+model.fit(X, y)
+marks = int(input("Enter marks: "))
+if marks >= 55:
+    print("Eligible for admission")
+else:
+    print("Not eligible for admission")
