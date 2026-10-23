@@ -1,0 +1,8 @@
+values = [1, 3, 5, 4, 2]
+current = 0
+while current < len(values) - 1:
+    if values[current + 1] > values[current]:
+        current += 1
+    else:
+        break
+print("Best value:", values[current])
