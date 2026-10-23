@@ -1,0 +1,15 @@
+import pandas as pd
+import matplotlib.pyplot as plt
+from sklearn.linear_model import LinearRegression
+df = pd.read_csv("youtube.csv")
+X = df[["Likes"]]
+y = df["Views"]
+model = LinearRegression()
+model.fit(X, y)
+plt.scatter(X, y, label="Actual views")
+plt.plot(X, model.predict(X), color="red", label="Regression line")
+plt.xlabel("Likes")
+plt.ylabel("Views")
+plt.title("Likes vs Views")
+plt.legend()
+plt.show()
