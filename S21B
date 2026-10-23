@@ -1,0 +1,10 @@
+import pandas as pd
+df = pd.read_csv("item.csv")
+print("First four rows:")
+print(df.head(4))
+print("Shape:", df.shape)
+print("Column names:", df.columns)
+print("Missing values:")
+print(df.isnull().sum())
+print("Dataset information:")
+df.info()
