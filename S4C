@@ -1,0 +1,10 @@
+import matplotlib.pyplot as plt
+from sklearn.datasets import load_iris
+iris = load_iris()
+X = iris.data
+plt.scatter(X[:, 0], X[:, 1], label="Iris data")
+plt.xlabel("Sepal Length")
+plt.ylabel("Sepal Width")
+plt.title("Sepal Length vs Sepal Width")
+plt.legend()
+plt.show()
