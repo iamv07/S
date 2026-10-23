@@ -1,0 +1,10 @@
+location = input("Enter location (A/B): ").upper()
+status = input("Enter cleanliness (CLEAN/DIRTY): ").upper()
+if location not in ["A", "B"] or status not in ["CLEAN", "DIRTY"]:
+    print("Invalid input")
+elif status == "DIRTY":
+    print("Action: Clean the room")
+elif location == "A":
+    print("Action: Move to B")
+else:
+    print("Action: Move to A")
